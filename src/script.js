@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addTask() {
-  const newTask = todoInput.value.trim();
+  const newTask = todoInput.value.trim().replace(/</g, "&lt;").replace(/>/g, "&gt;");
   if (newTask !== "") {
     todo.push({
       text: newTask,
